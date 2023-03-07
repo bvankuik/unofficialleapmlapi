@@ -7,7 +7,7 @@
 
 import Foundation
 
-// An inference only has image names, without their URIs.
+/// Model for an inference. Inferences are the preliminary response from the GenerateImageService.
 public struct Inference: Codable {
     public let id, prompt, negativePrompt: String
     public let createdAt: Date

@@ -7,12 +7,12 @@
 
 import Foundation
 
-public protocol Service {
+protocol Service {
     static func makeRequest() -> URLRequest
 }
 
 extension Service {
-    public static func makeRequest() -> URLRequest {
+    static func makeRequest() -> URLRequest {
         let modelID = "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
         var components = URLComponents()
         components.scheme = "https"

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Model for the image of an inference job, which has an array of these.
 public struct InferenceImage: Codable, Identifiable {
     public let id: String
     public let uri: String

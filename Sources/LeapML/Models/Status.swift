@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// This is the status of an inference job
 public enum Status: String, Codable {
     case queued, finished
 }

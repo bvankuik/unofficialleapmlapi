@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Thrown when we receive an unexpected HTTP error code from the LeapML API, or when something goes wrong
+/// when encoding a POST body, or decoding a response body.
 public struct ServiceError: LocalizedError {
     public let message: String
 

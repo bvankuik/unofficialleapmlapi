@@ -8,6 +8,9 @@
 import Foundation
 import OSLog
 
+/// This endpoint will list all inference jobs that you created under your API key, for the configured pre-trained
+/// model from LeapML that this code uses.
+/// See also: https://docs.leapml.dev/reference/inferencescontroller_create-1
 public struct ListInferenceService: Service {
     public static func call() async throws -> [InferenceJob] {
         let request = makeRequest()

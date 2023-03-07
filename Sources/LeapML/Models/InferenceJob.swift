@@ -7,7 +7,7 @@
 
 import Foundation
 
-// An inference job has images that include an URI
+/// Model for an inference job that has images that include an URI.
 public struct InferenceJob: Codable, Identifiable {
     public let id, prompt, negativePrompt: String
     public let status: Status
