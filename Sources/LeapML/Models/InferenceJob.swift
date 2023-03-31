@@ -8,7 +8,7 @@
 import Foundation
 
 /// Model for an inference job that has images that include an URI.
-public struct InferenceJob: Codable, Identifiable {
+public struct InferenceJob: Identifiable {
     public let id, prompt, negativePrompt: String
     public let status: Status
     public let seed, width, height, numberOfImages: Int
@@ -24,3 +24,5 @@ public struct InferenceJob: Codable, Identifiable {
         case modelID = "modelId"
     }
 }
+
+extension InferenceJob: Decodable {}

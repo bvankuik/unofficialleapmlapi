@@ -8,16 +8,15 @@
 import Foundation
 
 protocol Service {
-    static func makeRequest() -> URLRequest
+    static func makeRequest(configuration: LeapML.Configuration) -> URLRequest
 }
 
 extension Service {
-    static func makeRequest() -> URLRequest {
-        let modelID = "8b1b897c-d66d-45a6-b8d7-8e32421d02cf"
+    static func makeRequest(configuration: LeapML.Configuration) -> URLRequest {
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.leapml.dev"
-        components.path = "/api/v1/images/models/\(modelID)/inferences"
+        components.scheme = configuration.scheme
+        components.host = configuration.host
+        components.path = configuration.path
         
         guard let url = components.url else {
             fatalError("Can't build URL for some reason")

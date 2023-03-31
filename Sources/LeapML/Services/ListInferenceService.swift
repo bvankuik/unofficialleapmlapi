@@ -12,8 +12,8 @@ import OSLog
 /// model from LeapML that this code uses.
 /// See also: https://docs.leapml.dev/reference/inferencescontroller_create-1
 public struct ListInferenceService: Service {
-    public static func call() async throws -> [InferenceJob] {
-        let request = makeRequest()
+    public static func call(configuration: LeapML.Configuration = .standard) async throws -> [InferenceJob] {
+        let request = makeRequest(configuration: configuration)
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw ServiceError("URL response is not HTTPURLResponse")

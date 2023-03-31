@@ -11,8 +11,8 @@ import OSLog
 /// This endpoint will generate a new inference for one of the pre-trained models from LeapML.
 /// See also: https://docs.leapml.dev/reference/inferencescontroller_create-1
 public struct GenerateImageService: Service {
-    public static func call(requestBody: RequestBody) async throws -> Inference {
-        var request = makeRequest()
+    public static func call(requestBody: RequestBody, configuration: LeapML.Configuration = .standard) async throws -> Inference {
+        var request = makeRequest(configuration: configuration)
         
         guard let httpBody = try? JSONEncoder().encode(requestBody) else {
             throw ServiceError("Error encoding body")

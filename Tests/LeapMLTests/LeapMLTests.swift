@@ -6,6 +6,6 @@ final class LeapMLTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(LeapML().text, "Hello, World!")
+        XCTAssertEqual(LeapML().text, "Unofficial Swift package for accessing the LeapML API")
     }
 }
